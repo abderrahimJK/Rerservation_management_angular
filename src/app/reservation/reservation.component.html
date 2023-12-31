@@ -1,0 +1,81 @@
+<h1 class="mt-4">Reservations</h1>
+<div class="card m-2">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>List of Reservations</h2>
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Context</th>
+            <th>Date</th>
+            <th>Duration</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let p of reservations">
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.context}}</td>
+            <td>{{p.date}}</td>
+            <td>{{p.duration}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card p-2 shadow">
+          <div class="card-title">
+            <h2>Create Reservation</h2>
+          </div>
+          <div class="card-body">
+
+            <form #myform = "ngForm" (ngSubmit) = "onSubmit(myform)">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" id="name" required ngModel>
+              </div>
+              <div class="mb-3">
+                <label for="context" class="form-label">Context</label>
+                <input type="text" class="form-control" name="context" id="context" required ngModel>
+              </div>
+              <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="datetime-local" class="form-control" name="date" id="date" required ngModel>
+              </div>
+              <div class="mb-3">
+                <label for="duration" class="form-label">Duration</label>
+                <input type="text" class="form-control" name="duration" id="duration" required ngModel>
+              </div>
+              <hr class="hr hr-blurry" />
+              <div class="mb-3">
+                <label for="duration" class="form-label">Resource</label>
+                <select class="form-select" name="resourceId" ngModel>
+                  @for (r of resources; track r.id){
+                    <option value="{{r.id}}" >
+                      <span>{{r.name}}</span>
+                    </option>
+                  } @empty {
+                    <span>No Resources</span>
+                  }
+                </select>
+              </div>
+              <div class="mb-3">
+                <input type="number" hidden="hidden" class="form-control" name="personId" id="person_id" ngModel>
+              </div>
+              <button type="submit">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg> New Reservation
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

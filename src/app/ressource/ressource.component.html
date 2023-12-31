@@ -1,0 +1,59 @@
+<div class="card m-2">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <h1 class="p-4">Ressources</h1>
+        <div class="card ps-3">
+          <div class="card-body">
+            <table class="table">
+              <thead>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Type</th>
+              </thead>
+              <tbody>
+              <tr *ngFor="let r of ressources">
+                <td>{{r.id}}</td>
+                <td>{{r.name}}</td>
+                <td>{{r.type}}</td>
+              </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card p-2 shadow">
+          <div class="card-title">
+            <h2>Create Reservation</h2>
+          </div>
+          <div class="card-body">
+
+            <form #myform = "ngForm" (ngSubmit) = "onSubmit(myform)">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" id="name" required ngModel>
+              </div>
+              <div class="mb-3">
+                <label for="type" class="form-label">Type</label>
+                <select class="form-select" id="type" name="type" ngModel>
+                  <option value="MATERIEL_INF0" >MATERIEL_INF0</option>
+                  <option value="MATERIEL_AUDIO_VUSUEL" >MATERIEL_AUDIO_VUSUEL</option>
+                </select>
+              </div>
+              <button type="submit">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg> New Reservation
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
