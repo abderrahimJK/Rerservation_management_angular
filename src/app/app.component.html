@@ -11,26 +11,30 @@
           <a class="nav-link" href="index.html">Home <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
         </li>
         <li class="nav-item nav-custom-link">
-          <a class="nav-link text-white mx-2" routerLink="/ressource" >Resource</a>
+          <a class="nav-link text-white mx-2" routerLink="/ressource" *ngIf="keycloak.getUserRoles().includes('ADMIN')" >Resource</a>
         </li>
         <li class="nav-item nav-custom-link">
-          <a class="nav-link text-white mx-2" routerLink="/reservation" >Reservation</a>
+          <a class="nav-link text-white mx-2" routerLink="/reservation" *ngIf="keycloak.isLoggedIn()" >Reservation</a>
         </li>
         <li class="nav-item nav-custom-link">
           <a class="nav-link" href="#pricing">Pricing <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
         </li>
         <li class="nav-item  dropdown">
           <a class="nav-link mx-2 text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span >Account</span>
+            @if(keycloak.isLoggedIn()){
+              <span > {{userProfile?.email}}</span>
+            }@else{
+              <span >Account</span>
+            }
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" >Login</a></li>
+            <li><a class="dropdown-item" (click)="login()" >Login</a></li>
             <li>
               <form method="post">
-                <button class="btn" >Logout</button>
+                <button class="btn" (click)="logout()" >Logout</button>
               </form>
             </li>
-            <li><a class="dropdown-item" href="#">Contact us</a></li>
+            <li><a class="dropdown-item" (click)="profile()" >Profile</a></li>
           </ul>
         </li>
       </ul>
