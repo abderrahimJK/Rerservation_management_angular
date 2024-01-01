@@ -1,0 +1,130 @@
+/* ==============================================
+   4. Hero
+===============================================*/
+
+#hero {
+  background-color: #f6f8f9;
+}
+
+hero-content {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+#hero h1 {
+  font-size: 50px;
+  font-weight: 300;
+}
+
+#hero p {
+  font-size: 24px;
+  font-weight: 300;
+  color: #8da2b5;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+#hero span {
+  font-weight: 400;
+  color: #0095f7;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+/****/
+button {
+  border: 2px solid #24b4fb;
+  background-color: #24b4fb;
+  border-radius: 0.9em;
+  padding: 0.8em 1.2em 0.8em 1em;
+  transition: all ease-in-out 0.2s;
+  font-size: 16px;
+}
+
+button span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #0071e2;
+}
+
+
+
+@media (max-width: 991px) {
+  .nav-right {
+    float: left;
+  }
+  .nav-custom-link {
+    border-bottom: 1px solid #EEE;
+  }
+  .navbar-nav{
+    width: 100%;
+  }
+  .navbar-nav .nav-link {
+    padding: 20px 0;
+    text-align: left;
+  }
+
+  .btn-demo-small {
+    background-color: #ffffff;
+    border: 0px;
+    padding: 0px;
+    box-shadow: none;
+
+  }
+  .btn-demo-small:hover {
+    background-color: #ffffff;
+    border: 0px;
+    padding: 0px;
+    box-shadow: none;
+
+  }
+  .btn-demo-small a {
+    color: #53627C!important;
+  }
+  .nav-custom-link {
+    font-size: 13px;
+  }
+
+  .icon-mobile {
+    font-size: 18px;
+    float: right;
+  }
+
+  .navbar-collapse {
+    border-bottom: 1px solid #efefef;
+  }
+
+  .nav-logo-mobile {
+    margin: auto;
+    padding-right: 50px;
+  }
+
+  .nav-logo-desktop {
+    display: none;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .icon-mobile {
+    display: none;
+  }
+  .nav-logo-mobile {
+    display: none;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .hero-content {
+    margin-top: 100px;
+  }
+}
+

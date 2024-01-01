@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #3a3f52;
+}
+
+h2 {
+  font-size: 44px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .05em;
+  color: #53627C;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+b {
+  font-weight: 700;
+}
+
+section {
+  padding: 100px 0px;
+}/* You can add global styles to this file, and also import other style files */
